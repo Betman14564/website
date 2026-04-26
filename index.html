@@ -3,10 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Кровля — Монтаж и ремонт кровель в Калининграде</title>
+  <title>Ваша крыша — Монтаж и ремонт кровель в Калининграде</title>
   <meta name="description" content="Профессиональный монтаж кровли под ключ в Калининграде. Все виды кровельных работ. Гарантия до 5 лет. Бесплатный замер.">
   
-  <!-- Preconnect for performance -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
@@ -131,16 +130,6 @@
       100% { background-position: 0% 50%; }
     }
 
-    @keyframes shimmer {
-      0% { transform: translateX(-100%); }
-      100% { transform: translateX(100%); }
-    }
-
-    @keyframes lineExpand {
-      from { width: 0; opacity: 0.6; }
-      to { width: 60px; opacity: 1; }
-    }
-
     .animate-fade-in {
       animation: fadeInUp 0.6s var(--transition-smooth) forwards;
       opacity: 0;
@@ -213,17 +202,19 @@
       transform: translateX(2px);
     }
 
+    /* ===== HEADER LOGO - CLEAN & PROPORTIONAL ===== */
     .logo-icon {
-      width: 160px;
-      height: 64px;
+      width: auto;
+      max-width: 200px;
+      height: 50px;
       border-radius: 10px;
       display: flex;
       align-items: center;
       justify-content: center;
       flex-shrink: 0;
-      padding: 6px;
-      background: linear-gradient(135deg, rgba(29,78,216,0.15), rgba(251,101,18,0.1));
-      border: 1px solid rgba(255,255,255,0.08);
+      padding: 6px 12px;
+      background: linear-gradient(135deg, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0.02) 100%);
+      border: 1px solid rgba(255,255,255,0.1);
       transition: var(--transition);
       position: relative;
       overflow: hidden;
@@ -234,25 +225,29 @@
       position: absolute;
       top: 0; left: -100%;
       width: 100%; height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
-      transition: left 0.5s ease;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.08), transparent);
+      transition: left 0.6s ease;
     }
 
     .logo:hover .logo-icon::before {
       left: 100%;
     }
 
+    /* Image scales proportionally inside container */
     .logo-icon img {
-      width: 100%;
+      width: auto;
       height: 100%;
+      max-width: 100%;
       object-fit: contain;
       display: block;
       transition: transform 0.4s var(--transition-smooth);
       will-change: transform;
+      image-rendering: -webkit-optimize-contrast;
+      image-rendering: crisp-edges;
     }
 
     .logo:hover .logo-icon img {
-      transform: scale(1.03);
+      transform: scale(1.04);
     }
 
     .logo-text h1 {
@@ -561,17 +556,6 @@
       display: inline-block;
     }
 
-    .hero h2 em::after {
-      content: '';
-      position: absolute;
-      bottom: 4px; left: 0;
-      width: 100%; height: 8px;
-      background: linear-gradient(90deg, rgba(251,101,18,0.25), transparent);
-      border-radius: 4px;
-      z-index: -1;
-      animation: shimmer 2s ease-in-out infinite;
-    }
-
     .hero-subtitle {
       font-size: clamp(1.05rem, 2.8vw, 1.25rem);
       color: rgba(255,255,255,0.8);
@@ -724,26 +708,6 @@
       margin-bottom: 12px;
       position: relative;
       display: inline-block;
-    }
-
-    /* ===== SMOOTH LINE ANIMATION UNDER HEADINGS ===== */
-    .section-header h2::after {
-      content: '';
-      position: absolute;
-      bottom: -8px; left: 50%;
-      transform: translateX(-50%);
-      width: 0;
-      height: 4px;
-      background: linear-gradient(90deg, var(--blue-primary), var(--orange-accent));
-      border-radius: 2px;
-      animation: lineExpand 0.6s var(--transition-smooth) 0.2s forwards;
-      opacity: 0;
-      will-change: width, opacity;
-    }
-
-    .section-header.visible h2::after {
-      width: 60px;
-      opacity: 1;
     }
 
     .section-header p {
@@ -1393,21 +1357,22 @@
       text-decoration: none;
       transition: var(--transition);
       justify-content: center;
+      flex-direction: column;
     }
 
     .footer-logo:hover {
       transform: translateY(-2px);
     }
 
-    /* Footer logo - same as header */
+    /* ===== FOOTER LOGO - SQUARE ===== */
     .footer-logo .logo-icon {
-      width: 160px;
-      height: 64px;
-      border-radius: 10px;
+      width: 56px;
+      height: 56px;
+      border-radius: 12px;
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 6px;
+      padding: 8px;
       background: linear-gradient(135deg, rgba(29,78,216,0.15), rgba(251,101,18,0.1));
       border: 1px solid rgba(255,255,255,0.08);
       flex-shrink: 0;
@@ -1425,6 +1390,7 @@
       font-weight: 800;
       font-size: 1.25rem;
       color: var(--white);
+      margin-top: 8px;
     }
 
     .footer p {
@@ -1620,13 +1586,13 @@
       }
 
       .logo-icon {
-        width: 140px;
-        height: 56px;
+        max-width: 160px;
+        height: 44px;
       }
 
       .footer-logo .logo-icon {
-        width: 140px;
-        height: 56px;
+        width: 48px;
+        height: 48px;
       }
 
       .header-phone .header-schedule {
@@ -1726,8 +1692,8 @@
       }
 
       .footer-logo .logo-icon {
-        width: 130px;
-        height: 52px;
+        width: 44px;
+        height: 44px;
       }
     }
 
@@ -1766,8 +1732,7 @@
       
       .animate-float,
       .animate-glow,
-      .animate-gradient,
-      .section-header h2::after {
+      .animate-gradient {
         animation: none !important;
       }
     }
@@ -1788,16 +1753,16 @@
       <div class="header-top">
         <a href="#" class="logo">
           <div class="logo-icon">
-            <img src="https://i.ibb.co/v63HktY4/content-Photoroom.png" alt="Логотип компании Кровля" width="160" height="64">
+            <img src="https://i.ibb.co/v63HktY4/content-Photoroom.png" alt="Логотип Ваша крыша">
           </div>
           <div class="logo-text">
-            <h1>Кровля</h1>
+            <h1>Ваша крыша</h1>
             <span>Монтаж и ремонт кровель в Калининграде</span>
           </div>
         </a>
         <div class="header-phone">
           <span class="header-schedule"><i class="far fa-clock" aria-hidden="true"></i> Ежедневно 9:00–20:00</span>
-          <a href="tel:+79111234567" aria-label="Позвонить: +7 911 123 45 67"><i class="fas fa-phone" aria-hidden="true"></i> +79111234567</a>
+          <a href="tel:" aria-label="Позвонить: +7 911 123 45 67"><i class="fas fa-phone" aria-hidden="true"></i> +7(XXX)XXX-XX-XX</a>
         </div>
         <button class="burger" id="burger" aria-label="Открыть меню" aria-expanded="false" aria-controls="mobileMenu">
           <span></span><span></span><span></span>
@@ -1820,8 +1785,8 @@
     <a href="#why" class="mobile-link">Почему мы</a>
     <a href="#faq" class="mobile-link">Частые вопросы</a>
     <a href="#contacts" class="mobile-link">Контакты</a>
-    <a href="tel:+79111234567" style="color: var(--orange-light); margin-top: 12px;" aria-label="Позвонить: +7 911 123 45 67">
-      <i class="fas fa-phone" aria-hidden="true"></i> +79111234567
+    <a href="tel:+7(XXX)XXX-XX-XX" style="color: var(--orange-light); margin-top: 12px;" aria-label="Позвонить: +7(XXX)XXX-XX-XX">
+      <i class="fas fa-phone" aria-hidden="true"></i> +7(XXX)XXX-XX-XX
     </a>
   </div>
 
@@ -1849,7 +1814,7 @@
           </div>
           <div class="hero-phone">
             <i class="fas fa-phone-alt" style="color: var(--orange-light);" aria-hidden="true"></i>
-            <a href="tel:+79111234567" aria-label="Позвонить: +7 911 123 45 67">+79111234567</a>
+            <a href="tel:+7(XXX)XXX-XX-XX" aria-label="Позвонить: +7(XXX)XXX-XX-XX">++7(XXX)XXX-XX-XX</a>
           </div>
         </div>
       </div>
@@ -1864,7 +1829,6 @@
         </div>
 
         <div class="services-grid">
-          <!-- Cards 1-12 with lazy loading -->
           <div class="service-card">
             <img src="https://avatars.mds.yandex.net/i?id=7d606b7e620898b739de6e2b6cc17788499ada57-5219960-images-thumbs&n=13" alt="Устройство новой кровли" class="service-image" loading="lazy" width="400" height="190">
             <div class="service-content">
@@ -2058,7 +2022,7 @@
             
             <div class="cta-phone-big">
               <i class="fas fa-phone-alt animate-glow" aria-hidden="true"></i>
-              <a href="tel:+79111234567" aria-label="Позвонить: +7 911 123 45 67">+79111234567</a>
+              <a href="tel:+7(XXX)XXX-XX-XX" aria-label="Позвонить: +7 911 123 45 67">++7(XXX)XXX-XX-XX</a>
             </div>
             <p class="cta-schedule"><i class="far fa-clock" aria-hidden="true"></i> Ежедневно с 9:00 до 20:00</p>
             <p class="cta-schedule"><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Калининград и вся Калининградская область</p>
@@ -2074,7 +2038,7 @@
               </div>
               <div class="form-group">
                 <label for="phone">Номер телефона</label>
-                <input type="tel" id="phone" name="phone" placeholder="+79111234567" required autocomplete="tel" pattern="^\+7\d{10}$">
+                <input type="tel" id="phone" name="phone" placeholder="+7(XXX)XXX-XX-XX" required autocomplete="tel" pattern="^\+7\d{10}$">
               </div>
               <div class="form-group">
                 <label for="comment">Комментарий <span style="font-weight:400; color:#aaa;">(необязательно)</span></label>
@@ -2096,18 +2060,18 @@
     <div class="container">
       <a href="#" class="footer-logo">
         <div class="logo-icon">
-          <img src="https://i.ibb.co/v63HktY4/content-Photoroom.png" alt="Логотип компании Кровля" width="160" height="64">
+          <img src="https://i.ibb.co/v63HktY4/content-Photoroom.png" alt="Логотип Ваша крыша ">
         </div>
-        <span>Кровля</span>
+        <span>Ваша крыша</span>
       </a>
       <nav class="footer-links" aria-label="Дополнительная навигация">
         <a href="#services">Услуги</a>
         <a href="#why">Почему мы</a>
         <a href="#faq">Вопросы</a>
         <a href="#contacts">Контакты</a>
-        <a href="tel:+79111234567" aria-label="Позвонить: +7 911 123 45 67">+79111234567</a>
+        <a href="tel:+7(XXX)XXX-XX-XX" aria-label="Позвонить: +7(XXX)XXX-XX-XX">+7(XXX)XXX-XX-XX</a>
       </nav>
-      <p>© 2024–2026 Кровля. Все права защищены. Калининград.</p>
+      <p>© 2024–2026 Ваша крыша. Все права защищены. Калининград.</p>
     </div>
   </footer>
 
@@ -2123,8 +2087,6 @@
 
   <!-- 
   ===== DEPLOYMENT CONFIG =====
-  Для платформы с поддержкой custom domains (например, Vercel, Cloudflare Pages):
-  
   {
     "routes": [
       {
@@ -2137,7 +2099,6 @@
   
   <!-- ===== JAVASCRIPT ===== -->
   <script>
-    // ===== BURGER MENU =====
     const burger = document.getElementById('burger');
     const mobileMenu = document.getElementById('mobileMenu');
     const mobileLinks = mobileMenu.querySelectorAll('a');
@@ -2169,7 +2130,6 @@
       }
     });
 
-    // ===== HEADER SCROLL =====
     const header = document.getElementById('header');
     let lastScroll = 0;
     window.addEventListener('scroll', () => {
@@ -2178,18 +2138,15 @@
       lastScroll = currentScroll;
     }, { passive: true });
 
-    // ===== FAQ ACCORDION =====
     document.querySelectorAll('.faq-question').forEach(btn => {
       btn.addEventListener('click', () => {
         const item = btn.parentElement;
         const isActive = item.classList.contains('active');
-
         document.querySelectorAll('.faq-item').forEach(i => {
           i.classList.remove('active');
           const q = i.querySelector('.faq-question');
           if (q) q.setAttribute('aria-expanded', 'false');
         });
-
         if (!isActive) {
           item.classList.add('active');
           btn.setAttribute('aria-expanded', 'true');
@@ -2199,7 +2156,6 @@
       });
     });
 
-    // ===== FORM SUBMISSION =====
     const form = document.getElementById('callbackForm');
     const modal = document.getElementById('thankModal');
     const modalClose = document.getElementById('modalClose');
@@ -2218,18 +2174,15 @@
       e.preventDefault();
       const name = document.getElementById('name')?.value.trim();
       const phone = phoneInput?.value.trim();
-
       if (!name || !phone) {
         alert('Пожалуйста, заполните имя и номер телефона.');
         return;
       }
-
       const phonePattern = /^\+7\d{10}$/;
       if (!phonePattern.test(phone)) {
-        alert('Пожалуйста, введите корректный номер телефона в формате +79111234567');
+        alert('Пожалуйста, введите корректный номер телефона в формате +7(___)___-__-__');
         return;
       }
-
       modal?.classList.add('open');
       document.body.style.overflow = 'hidden';
       form.reset();
@@ -2255,64 +2208,41 @@
       }
     });
 
-    // ===== SCROLL ANIMATIONS WITH STAGGER =====
     const observerOptions = { threshold: 0.12, rootMargin: '0px 0px -30px 0px' };
     
-    // Add visible class to section headers when in view (for line animation)
-    const sectionHeaders = document.querySelectorAll('.section-header');
-    const headerObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          headerObserver.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.3 });
-    sectionHeaders.forEach(header => headerObserver.observe(header));
-    
-    // Service cards staggered animation
     const serviceCards = document.querySelectorAll('.service-card');
     const serviceObserver = new IntersectionObserver((entries) => {
       entries.forEach((entry, index) => {
         if (entry.isIntersecting) {
-          setTimeout(() => {
-            entry.target.classList.add('visible');
-          }, index * 80);
+          setTimeout(() => entry.target.classList.add('visible'), index * 80);
           serviceObserver.unobserve(entry.target);
         }
       });
     }, observerOptions);
     serviceCards.forEach(card => serviceObserver.observe(card));
 
-    // Why cards staggered
     const whyCards = document.querySelectorAll('.why-card');
     const whyObserver = new IntersectionObserver((entries) => {
       entries.forEach((entry, index) => {
         if (entry.isIntersecting) {
-          setTimeout(() => {
-            entry.target.classList.add('visible');
-          }, index * 100);
+          setTimeout(() => entry.target.classList.add('visible'), index * 100);
           whyObserver.unobserve(entry.target);
         }
       });
     }, observerOptions);
     whyCards.forEach(card => whyObserver.observe(card));
 
-    // FAQ items staggered
     const faqItems = document.querySelectorAll('.faq-item');
     const faqObserver = new IntersectionObserver((entries) => {
       entries.forEach((entry, index) => {
         if (entry.isIntersecting) {
-          setTimeout(() => {
-            entry.target.classList.add('visible');
-          }, index * 70);
+          setTimeout(() => entry.target.classList.add('visible'), index * 70);
           faqObserver.unobserve(entry.target);
         }
       });
     }, observerOptions);
     faqItems.forEach(item => faqObserver.observe(item));
 
-    // General fade-up elements
     const fadeEls = document.querySelectorAll('.fade-up');
     const fadeObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
@@ -2324,7 +2254,6 @@
     }, observerOptions);
     fadeEls.forEach(el => fadeObserver.observe(el));
 
-    // Services note animation
     const servicesNote = document.querySelector('.services-note');
     if (servicesNote) {
       const noteObserver = new IntersectionObserver((entries) => {
