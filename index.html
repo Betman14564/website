@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <meta name="theme-color" content="#1a1a1a">
-  <title>Кровля — Монтаж и ремонт кровель в Калининграде</title>
+  <title>Ваша Крыша — Монтаж и ремонт кровель в Калининграде</title>
   <meta name="description" content="Профессиональный монтаж кровли под ключ в Калининграде. Все виды кровельных работ. Гарантия до 5 лет. Бесплатный замер.">
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,7 +13,6 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw==" crossorigin="anonymous" referrerpolicy="no-referrer">
   
   <style>
-    /* ===== RESET & BASE ===== */
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
     :root {
       --graphite: #2d2d2d; --dark: #1a1a1a; --dark-lighter: #3a3a3a; --slate: #4a4a4a;
@@ -30,20 +29,11 @@
       color: var(--text-dark); background: var(--light-gray); line-height: 1.6;
       overflow-x: hidden; min-height: 100dvh; -webkit-tap-highlight-color: transparent;
     }
-    .skip-link {
-      position: absolute; top: -40px; left: 0; background: var(--orange-accent);
-      color: white; padding: 8px 16px; z-index: 2000; text-decoration: none;
-      font-weight: 600; border-radius: 0 0 8px 0; transition: top 0.2s;
-    }
+    .skip-link { position: absolute; top: -40px; left: 0; background: var(--orange-accent); color: white; padding: 8px 16px; z-index: 2000; text-decoration: none; font-weight: 600; border-radius: 0 0 8px 0; transition: top 0.2s; }
     .skip-link:focus { top: 0; }
-    body::before {
-      content: ''; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-      pointer-events: none; z-index: 0; opacity: 0.015;
-      background-image: repeating-linear-gradient(45deg, transparent, transparent 3px, #000 3px, #000 4px);
-    }
+    body::before { content: ''; position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; opacity: 0.015; background-image: repeating-linear-gradient(45deg, transparent, transparent 3px, #000 3px, #000 4px); }
     .container { max-width: 1200px; margin: 0 auto; padding: 0 clamp(12px, 4vw, 20px); position: relative; z-index: 1; }
 
-    /* ===== ANIMATIONS ===== */
     @keyframes fadeInUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
     @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
     @keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
@@ -88,7 +78,7 @@
     .mobile-menu a:hover { background: rgba(255,255,255,0.06); color: var(--orange-light); transform: translateX(2px); }
 
     /* ===== HERO ===== */
-    .hero { margin-top: 80px; background: linear-gradient(135deg, var(--dark) 0%, var(--graphite) 40%, var(--slate) 100%); position: relative; overflow: hidden; padding: clamp(40px, 7vw, 70px) 0 clamp(50px, 7vw, 80px); }
+    .hero { margin-top: 90px; background: linear-gradient(135deg, var(--dark) 0%, var(--graphite) 40%, var(--slate) 100%); position: relative; overflow: hidden; padding: clamp(40px, 7vw, 70px) 0 clamp(50px, 7vw, 80px); }
     .hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(155deg, transparent 30%, rgba(29,78,216,0.08) 31%, transparent 31%), linear-gradient(165deg, transparent 50%, rgba(251,101,18,0.06) 51%, transparent 51%); pointer-events: none; animation: gradientShift 12s ease infinite; background-size: 200% 200%; }
     .hero::after { content: ''; position: absolute; bottom: -2px; left: 0; right: 0; height: clamp(50px, 8vw, 80px); background: var(--light-gray); clip-path: ellipse(60% 100% at 50% 100%); }
     .hero-content { position: relative; z-index: 2; text-align: center; max-width: 750px; margin: 0 auto; animation: fadeInUp 0.7s ease forwards; padding: 0 4px; }
@@ -156,7 +146,7 @@
     .faq-item.active .faq-answer { max-height: 400px; }
     .faq-answer-inner { padding: 0 clamp(16px, 3vw, 24px) clamp(12px, 3vw, 18px); color: var(--text-muted); font-size: clamp(0.86rem, 2.1vw, 0.94rem); line-height: 1.6; }
 
-    /* ===== CTA / CONTACTS ===== */
+    /* ===== CTA ===== */
     .cta { background: linear-gradient(135deg, var(--dark) 0%, var(--graphite) 100%); overflow: hidden; }
     .cta::before, .cta::after { content: ''; position: absolute; border-radius: 50%; pointer-events: none; animation: float 7s ease-in-out infinite; }
     .cta::before { top: -40%; right: -10%; width: clamp(250px, 45vw, 450px); height: clamp(250px, 45vw, 450px); background: radial-gradient(circle, rgba(251,101,18,0.1) 0%, transparent 70%); }
@@ -185,18 +175,20 @@
     .form-submit:active { transform: translateY(0); }
     .form-privacy { font-size: 0.7rem; color: #aaa; margin-top: 8px; text-align: center; line-height: 1.4; }
 
-    /* ===== FOOTER ===== */
-    .footer { background: var(--dark); padding: clamp(26px, 4vw, 36px) 0 clamp(18px, 3vw, 24px); text-align: center; position: relative; }
+    /* ===== FOOTER — compact horizontal ===== */
+    .footer { background: var(--dark); padding: clamp(22px, 3vw, 32px) 0 clamp(16px, 2vw, 22px); text-align: center; position: relative; }
     .footer::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.08), transparent); }
-    .footer-logo { display: inline-flex; align-items: center; gap: 10px; margin-bottom: 14px; text-decoration: none; flex-direction: column; transition: var(--transition); }
-    @media (hover: hover) { .footer-logo:hover { transform: translateY(-2px); } }
-    .footer-logo .logo-icon { width: clamp(44px, 9vw, 52px); height: clamp(44px, 9vw, 52px); border-radius: 10px; display: flex; align-items: center; justify-content: center; padding: 6px; background: linear-gradient(135deg, rgba(29,78,216,0.12), rgba(251,101,18,0.08)); border: 1px solid rgba(255,255,255,0.08); }
-    .footer-logo .logo-icon img { width: 100%; height: 100%; object-fit: contain; display: block; }
-    .footer-logo span { font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: clamp(1.05rem, 2.8vw, 1.2rem); color: var(--white); margin-top: 4px; }
-    .footer p { color: rgba(255,255,255,0.45); font-size: clamp(0.72rem, 1.8vw, 0.82rem); line-height: 1.5; }
-    .footer-links { display: flex; justify-content: center; gap: clamp(12px, 3vw, 20px); margin: 12px 0; flex-wrap: wrap; }
-    .footer-links a { color: rgba(255,255,255,0.6); text-decoration: none; font-size: clamp(0.78rem, 2vw, 0.86rem); transition: var(--transition); padding: 6px 8px; border-radius: 6px; min-height: 36px; display: flex; align-items: center; }
+    .footer-inner { display: flex; flex-direction: column; align-items: center; gap: 12px; }
+    .footer-brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .footer-brand .logo-icon { width: clamp(44px, 9vw, 52px); height: clamp(44px, 9vw, 52px); border-radius: 10px; display: flex; align-items: center; justify-content: center; padding: 6px; background: linear-gradient(135deg, rgba(29,78,216,0.12), rgba(251,101,18,0.08)); border: 1px solid rgba(255,255,255,0.08); }
+    .footer-brand .logo-icon img { width: 100%; height: 100%; object-fit: contain; display: block; }
+    .footer-brand span { font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: clamp(1.05rem, 2.8vw, 1.2rem); color: var(--white); }
+    @media (hover: hover) { .footer-brand:hover { transform: translateY(-2px); } }
+    .footer-links { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: clamp(8px, 2vw, 16px); }
+    .footer-links a { color: rgba(255,255,255,0.6); text-decoration: none; font-size: clamp(0.76rem, 1.8vw, 0.84rem); transition: var(--transition); padding: 4px 6px; border-radius: 4px; min-height: 32px; display: flex; align-items: center; }
     .footer-links a:hover { color: var(--orange-light); background: rgba(255,255,255,0.05); }
+    .footer-divider { width: clamp(120px, 40vw, 280px); height: 1px; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.12), transparent); }
+    .footer p { color: rgba(255,255,255,0.4); font-size: clamp(0.7rem, 1.6vw, 0.8rem); }
 
     /* ===== MODAL ===== */
     .modal-overlay { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.7); z-index: 2000; align-items: center; justify-content: center; backdrop-filter: blur(6px); opacity: 0; transition: opacity 0.25s ease; padding: 20px; }
@@ -211,7 +203,7 @@
     .modal-close:hover { background: var(--orange-dark); transform: translateY(-1px); box-shadow: 0 4px 18px rgba(251,101,18,0.4); }
 
     /* ===== RESPONSIVE ===== */
-    @media (max-width: 992px) { .cta-wrapper { grid-template-columns: 1fr; gap: 30px; } .cta-info { text-align: center; } .cta-phone-big { justify-content: center; } .why-grid { grid-template-columns: repeat(2, 1fr); } .hero { margin-top: 74px; } }
+    @media (max-width: 992px) { .cta-wrapper { grid-template-columns: 1fr; gap: 30px; } .cta-info { text-align: center; } .cta-phone-big { justify-content: center; } .why-grid { grid-template-columns: repeat(2, 1fr); } .hero { margin-top: 85px; } }
     @media (max-width: 768px) {
       .header-top { padding: 8px 0; gap: 10px; }
       .logo-icon { max-width: 120px; height: 36px; }
@@ -219,7 +211,7 @@
       .header-schedule { display: none; }
       .nav { display: none; }
       .burger { display: flex; order: 3; margin-left: auto; }
-      .hero { margin-top: 68px; padding: 35px 0 55px; }
+      .hero { margin-top: 82px; padding: 35px 0 55px; }
       .hero-actions { flex-direction: column; gap: 8px; }
       .btn { width: 100%; max-width: 300px; }
       .services-grid { grid-template-columns: 1fr; }
@@ -232,9 +224,11 @@
     @media (max-width: 480px) {
       html { scroll-padding-top: 70px; }
       .container { padding: 0 10px; }
-      .logo-icon { max-width: 100px; height: 32px; }
-      .logo-text h1 { font-size: 0.95rem; }
-      .hero { margin-top: 62px; }
+      .header-top { padding: 6px 0; }
+      .logo-icon { max-width: 95px; height: 32px; padding: 3px 5px; }
+      .logo-text h1 { font-size: 0.92rem; }
+      .logo-text span { font-size: 0.6rem; }
+      .hero { margin-top: 78px; }
       .hero h2 { font-size: 1.45rem; }
       .services-grid { gap: 12px; }
       .service-image { aspect-ratio: 2/1; }
@@ -244,8 +238,7 @@
       .faq-list { gap: 8px; }
       .cta-wrapper { gap: 22px; }
       .cta-info h2 { font-size: 1.2rem; }
-      .footer { padding: 20px 0 16px; }
-      .footer-links { flex-direction: column; align-items: center; gap: 6px; }
+      .footer-links { gap: 6px 10px; }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -262,12 +255,12 @@
     <div class="container">
       <div class="header-top">
         <a href="#" class="logo">
-          <div class="logo-icon"><img src="https://i.ibb.co/v63HktY4/content-Photoroom.png" alt="Логотип Кровля" width="160" height="40"></div>
-          <div class="logo-text"><h1>Кровля</h1><span>Монтаж и ремонт кровель в Калининграде</span></div>
+          <div class="logo-icon"><img src="https://i.ibb.co/v63HktY4/content-Photoroom.png" alt="Логотип Ваша Крыша" width="160" height="40"></div>
+          <div class="logo-text"><h1>Ваша Крыша</h1><span>Монтаж и ремонт кровель в Калининграде</span></div>
         </a>
         <div class="header-phone">
           <span class="header-schedule"><i class="far fa-clock" aria-hidden="true"></i> 9:00–20:00</span>
-          <a href="tel:+79111234567" aria-label="Позвонить +79111234567"><i class="fas fa-phone" aria-hidden="true"></i> +79111234567</a>
+          <a href="tel:+79111234567" aria-label="Позвонить"><i class="fas fa-phone" aria-hidden="true"></i> +7(***)***-**-**</a>
         </div>
         <button class="burger" id="burger" aria-label="Меню" aria-expanded="false" aria-controls="mobileMenu"><span></span><span></span><span></span></button>
       </div>
@@ -276,8 +269,11 @@
   </header>
 
   <div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true" aria-label="Мобильное меню">
-    <a href="#services" class="mobile-link">Услуги</a><a href="#why" class="mobile-link">Почему мы</a><a href="#faq" class="mobile-link">Вопросы</a><a href="#contacts" class="mobile-link">Контакты</a>
-    <a href="tel:+79111234567" style="color: var(--orange-light); margin-top: 10px;" aria-label="Позвонить +79111234567"><i class="fas fa-phone" aria-hidden="true"></i> +79111234567</a>
+    <a href="#services" class="mobile-link">Услуги</a>
+    <a href="#why" class="mobile-link">Почему мы</a>
+    <a href="#faq" class="mobile-link">Вопросы</a>
+    <a href="#contacts" class="mobile-link">Контакты</a>
+    <a href="tel:+79111234567" style="color: var(--orange-light); margin-top: 10px;" aria-label="Позвонить"><i class="fas fa-phone" aria-hidden="true"></i> +7(***)***-**-**</a>
   </div>
 
   <main id="main-content">
@@ -287,8 +283,14 @@
           <div class="hero-badge"><i class="fas fa-shield-alt" aria-hidden="true"></i> Гарантия до 5 лет</div>
           <h2>Качественная кровля<br>для <em>климата Калининграда</em></h2>
           <p class="hero-subtitle">Работаем с дождём и ветром. <strong>Бесплатный замер</strong> и расчёт.<br>Проверенные материалы, реальные объекты.</p>
-          <div class="hero-actions"><a href="#contacts" class="btn btn-primary"><i class="fas fa-calculator" aria-hidden="true"></i> Рассчитать стоимость</a><a href="#services" class="btn btn-outline"><i class="fas fa-list" aria-hidden="true"></i> Наши услуги</a></div>
-          <div class="hero-phone"><i class="fas fa-phone-alt" style="color: var(--orange-light);" aria-hidden="true"></i><a href="tel:+79111234567" aria-label="Позвонить +79111234567">+79111234567</a></div>
+          <div class="hero-actions">
+            <a href="#contacts" class="btn btn-primary"><i class="fas fa-calculator" aria-hidden="true"></i> Рассчитать стоимость</a>
+            <a href="#services" class="btn btn-outline"><i class="fas fa-list" aria-hidden="true"></i> Наши услуги</a>
+          </div>
+          <div class="hero-phone">
+            <i class="fas fa-phone-alt" style="color: var(--orange-light);" aria-hidden="true"></i>
+            <a href="tel:+79111234567" aria-label="Позвонить">+7(***)***-**-**</a>
+          </div>
         </div>
       </div>
     </section>
@@ -343,7 +345,7 @@
           <div class="cta-info fade-up">
             <h2>Нужна консультация<br>или бесплатный замер?</h2>
             <p>Позвоните или оставьте заявку — ответим, рассчитаем стоимость и подберём решение.</p>
-            <div class="cta-phone-big"><i class="fas fa-phone-alt animate-glow" aria-hidden="true"></i><a href="tel:+79111234567" aria-label="Позвонить +79111234567">+79111234567</a></div>
+            <div class="cta-phone-big"><i class="fas fa-phone-alt animate-glow" aria-hidden="true"></i><a href="tel:+79111234567" aria-label="Позвонить">+7(***)***-**-**</a></div>
             <p class="cta-schedule"><i class="far fa-clock" aria-hidden="true"></i> Ежедневно 9:00–20:00</p>
             <p class="cta-schedule"><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Калининград и область</p>
           </div>
@@ -351,7 +353,7 @@
             <h3>Заказать обратный звонок</h3><p class="form-sub">Перезвоним за 15 минут</p>
             <form id="callbackForm" novalidate>
               <div class="form-group"><label for="name">Ваше имя</label><input type="text" id="name" name="name" placeholder="Алексей" required autocomplete="name"></div>
-              <div class="form-group"><label for="phone">Телефон</label><input type="tel" id="phone" name="phone" placeholder="+79111234567" required autocomplete="tel" pattern="^\+7\d{10}$"></div>
+              <div class="form-group"><label for="phone">Телефон</label><input type="tel" id="phone" name="phone" placeholder="+7(***)***-**-**" required autocomplete="tel"></div>
               <div class="form-group"><label for="comment">Комментарий <span style="font-weight:400; color:#aaa;">(необязательно)</span></label><textarea id="comment" name="comment" placeholder="Адрес объекта или задача"></textarea></div>
               <button type="submit" class="form-submit"><i class="fas fa-paper-plane" aria-hidden="true"></i> Отправить заявку</button>
               <p class="form-privacy">Согласие на обработку персональных данных</p>
@@ -364,9 +366,21 @@
 
   <footer class="footer">
     <div class="container">
-      <a href="#" class="footer-logo"><div class="logo-icon"><img src="https://i.ibb.co/v63HktY4/content-Photoroom.png" alt="Логотип" width="52" height="52"></div><span>Кровля</span></a>
-      <nav class="footer-links" aria-label="Дополнительно"><a href="#services">Услуги</a><a href="#why">Почему мы</a><a href="#faq">Вопросы</a><a href="#contacts">Контакты</a><a href="tel:+79111234567">+79111234567</a></nav>
-      <p>© 2024–2026 Кровля. Калининград.</p>
+      <div class="footer-inner">
+        <a href="#" class="footer-brand">
+          <div class="logo-icon"><img src="https://i.ibb.co/v63HktY4/content-Photoroom.png" alt="Логотип" width="52" height="52"></div>
+          <span>Ваша Крыша</span>
+        </a>
+        <nav class="footer-links" aria-label="Дополнительно">
+          <a href="#services">Услуги</a>
+          <a href="#why">Почему мы</a>
+          <a href="#faq">Вопросы</a>
+          <a href="#contacts">Контакты</a>
+          <a href="tel:+79111234567" aria-label="Позвонить">+7(***)***-**-**</a>
+        </nav>
+        <div class="footer-divider"></div>
+        <p>© 2024–2026 Ваша Крыша. Калининград.</p>
+      </div>
     </div>
   </footer>
 
@@ -378,7 +392,6 @@
   { "routes": [{ "pattern": "website.dev", "custom_domain": true }] } -->
   
   <script>
-    // Burger
     const burger = document.getElementById('burger'), mobileMenu = document.getElementById('mobileMenu');
     burger.addEventListener('click', () => {
       const open = mobileMenu.classList.toggle('open');
@@ -391,10 +404,8 @@
     }));
     document.addEventListener('keydown', e => { if(e.key === 'Escape' && mobileMenu.classList.contains('open')) { mobileMenu.classList.remove('open'); burger.classList.remove('active'); document.body.style.overflow = ''; burger.focus(); } });
 
-    // Header scroll
     window.addEventListener('scroll', () => document.getElementById('header').classList.toggle('scrolled', window.scrollY > 50), { passive: true });
 
-    // FAQ instant toggle
     document.querySelectorAll('.faq-question').forEach(btn => {
       btn.addEventListener('click', () => {
         const item = btn.parentElement, isActive = item.classList.contains('active');
@@ -403,7 +414,6 @@
       });
     });
 
-    // Form
     const form = document.getElementById('callbackForm'), modal = document.getElementById('thankModal'), modalClose = document.getElementById('modalClose'), phoneInput = document.getElementById('phone');
     phoneInput.addEventListener('input', e => {
       let v = e.target.value.replace(/\D/g, '');
@@ -413,18 +423,13 @@
     form.addEventListener('submit', e => {
       e.preventDefault();
       if(!document.getElementById('name').value.trim() || !phoneInput.value.trim()) return alert('Заполните имя и телефон');
-      if(!/^\+7\d{10}$/.test(phoneInput.value)) return alert('Формат: +79XXXXXXXXX');
+      if(!/^\+7\d{10}$/.test(phoneInput.value)) return alert('Формат: +7XXXXXXXXXX');
       modal.classList.add('open'); document.body.style.overflow = 'hidden'; form.reset(); setTimeout(()=>modalClose.focus(), 50);
     });
     const closeModal = () => { modal.classList.remove('open'); document.body.style.overflow = ''; };
     modalClose.addEventListener('click', closeModal); modal.addEventListener('click', e => { if(e.target===modal) closeModal(); }); document.addEventListener('keydown', e => { if(e.key==='Escape' && modal.classList.contains('open')) closeModal(); });
 
-    // Intersection Observer (optimized single loop)
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); }
-      });
-    }, { threshold: 0.1, rootMargin: '0px 0px -20px 0px' });
+    const observer = new IntersectionObserver(entries => { entries.forEach(entry => { if(entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); } }); }, { threshold: 0.1, rootMargin: '0px 0px -20px 0px' });
     document.querySelectorAll('.fade-up, .service-card, .why-card, .faq-item, .services-note').forEach(el => observer.observe(el));
   </script>
 </body>
