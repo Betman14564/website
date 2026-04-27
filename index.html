@@ -23,7 +23,7 @@
       --radius: 12px; --radius-lg: 20px;
       --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     }
-    html { scroll-behavior: smooth; font-size: 16px; scroll-padding-top: 90px; }
+    html { font-size: 16px; scroll-padding-top: 85px; } /* scroll-behavior убран для фикса авто-скролла */
     body {
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
       color: var(--text-dark); background: var(--light-gray); line-height: 1.6;
@@ -175,7 +175,7 @@
     .form-submit:active { transform: translateY(0); }
     .form-privacy { font-size: 0.7rem; color: #aaa; margin-top: 8px; text-align: center; line-height: 1.4; }
 
-    /* ===== FOOTER — compact horizontal ===== */
+    /* ===== FOOTER ===== */
     .footer { background: var(--dark); padding: clamp(22px, 3vw, 32px) 0 clamp(16px, 2vw, 22px); text-align: center; position: relative; }
     .footer::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.08), transparent); }
     .footer-inner { display: flex; flex-direction: column; align-items: center; gap: 12px; }
@@ -222,7 +222,6 @@
       .faq-answer-inner { padding: 0 16px 16px; }
     }
     @media (max-width: 480px) {
-      html { scroll-padding-top: 70px; }
       .container { padding: 0 10px; }
       .header-top { padding: 6px 0; }
       .logo-icon { max-width: 95px; height: 32px; padding: 3px 5px; }
@@ -242,7 +241,7 @@
     }
 
     @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
+      *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
       .fade-up, .service-card, .why-card, .faq-item { opacity: 1 !important; transform: none !important; transition: none !important; }
       .animate-float, .animate-glow { animation: none !important; }
     }
@@ -392,6 +391,26 @@
   { "routes": [{ "pattern": "website.dev", "custom_domain": true }] } -->
   
   <script>
+    // ===== FIX: Prevent auto-scroll on load =====
+    history.scrollRestoration = 'manual';
+    window.scrollTo(0, 0);
+
+    // Smooth scroll only on click (doesn't trigger on page load)
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
+      link.addEventListener('click', function(e) {
+        const href = this.getAttribute('href');
+        if (href === '#') return;
+        e.preventDefault();
+        const target = document.querySelector(href);
+        if (target) {
+          const headerOffset = 85;
+          const targetPos = target.getBoundingClientRect().top + window.pageYOffset;
+          window.scrollTo({ top: targetPos - headerOffset, behavior: 'smooth' });
+        }
+      });
+    });
+
+    // Burger
     const burger = document.getElementById('burger'), mobileMenu = document.getElementById('mobileMenu');
     burger.addEventListener('click', () => {
       const open = mobileMenu.classList.toggle('open');
@@ -404,8 +423,10 @@
     }));
     document.addEventListener('keydown', e => { if(e.key === 'Escape' && mobileMenu.classList.contains('open')) { mobileMenu.classList.remove('open'); burger.classList.remove('active'); document.body.style.overflow = ''; burger.focus(); } });
 
+    // Header scroll
     window.addEventListener('scroll', () => document.getElementById('header').classList.toggle('scrolled', window.scrollY > 50), { passive: true });
 
+    // FAQ
     document.querySelectorAll('.faq-question').forEach(btn => {
       btn.addEventListener('click', () => {
         const item = btn.parentElement, isActive = item.classList.contains('active');
@@ -414,6 +435,7 @@
       });
     });
 
+    // Form
     const form = document.getElementById('callbackForm'), modal = document.getElementById('thankModal'), modalClose = document.getElementById('modalClose'), phoneInput = document.getElementById('phone');
     phoneInput.addEventListener('input', e => {
       let v = e.target.value.replace(/\D/g, '');
@@ -429,6 +451,7 @@
     const closeModal = () => { modal.classList.remove('open'); document.body.style.overflow = ''; };
     modalClose.addEventListener('click', closeModal); modal.addEventListener('click', e => { if(e.target===modal) closeModal(); }); document.addEventListener('keydown', e => { if(e.key==='Escape' && modal.classList.contains('open')) closeModal(); });
 
+    // Scroll animations
     const observer = new IntersectionObserver(entries => { entries.forEach(entry => { if(entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); } }); }, { threshold: 0.1, rootMargin: '0px 0px -20px 0px' });
     document.querySelectorAll('.fade-up, .service-card, .why-card, .faq-item, .services-note').forEach(el => observer.observe(el));
   </script>
