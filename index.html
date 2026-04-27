@@ -52,7 +52,7 @@
     .header.scrolled { box-shadow: 0 4px 30px rgba(0,0,0,0.35); background: rgba(26,26,26,0.98); backdrop-filter: blur(10px); }
     .header-top { display: flex; align-items: center; justify-content: space-between; padding: 10px 0; gap: 12px; flex-wrap: wrap; border-bottom: 1px solid rgba(255,255,255,0.07); }
     .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--white); flex-shrink: 0; }
-    .logo-icon { width: auto; max-width: clamp(100px, 20vw, 160px); height: 40px; border-radius: 8px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; padding: 4px 8px; background: linear-gradient(135deg, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0.02) 100%); border: 1px solid rgba(255,255,255,0.1); transition: var(--transition); }
+    .logo-icon { width: auto; max-width: clamp(100px, 20vw, 160px); height: 40px; border-radius: 8px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; padding: 4px 8px; background: linear-gradient(135deg, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0.02) 100%); border: 1px solid rgba(255,255,255,0.1); transition: var(--transition); position: relative; }
     .logo-icon::before { content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.08), transparent); transition: left 0.5s ease; }
     .logo:hover .logo-icon::before { left: 100%; }
     .logo-icon img { width: auto; height: 100%; max-width: 100%; object-fit: contain; display: block; }
@@ -100,7 +100,7 @@
     @media (hover: hover) { .hero-phone a:hover { color: var(--orange-light); } }
 
     /* ===== SECTIONS ===== */
-    section { padding: clamp(40px, 6vw, 70px) 0; position: relative; content-visibility: auto; contain-intrinsic-size: 1px 500px; }
+    section { padding: clamp(40px, 6vw, 70px) 0; position: relative; }
     .section-header { text-align: center; margin-bottom: clamp(30px, 4vw, 45px); }
     .section-header h2 { font-family: 'Montserrat', sans-serif; font-size: clamp(1.4rem, 4vw, 2.1rem); font-weight: 800; color: var(--text-dark); margin-bottom: 8px; line-height: 1.2; }
     .section-header p { color: var(--text-muted); font-size: clamp(0.88rem, 2.2vw, 1rem); max-width: 580px; margin: 12px auto 0; line-height: 1.5; }
