@@ -23,18 +23,13 @@
       --radius: 12px; --radius-lg: 20px;
       --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     }
-    html { 
-      font-size: 16px; 
-      /* scroll-padding-top убран — он вызывает прыжок при загрузке */
-    }
+    html { font-size: 16px; }
     body {
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
       color: var(--text-dark); background: var(--light-gray); line-height: 1.6;
       overflow-x: hidden; min-height: 100dvh; -webkit-tap-highlight-color: transparent;
     }
-    .skip-link { 
-      position: absolute; top: -40px; left: 0; background: var(--orange-accent); color: white; padding: 8px 16px; z-index: 2000; text-decoration: none; font-weight: 600; border-radius: 0 0 8px 0; transition: top 0.2s; 
-    }
+    .skip-link { position: absolute; top: -40px; left: 0; background: var(--orange-accent); color: white; padding: 8px 16px; z-index: 2000; text-decoration: none; font-weight: 600; border-radius: 0 0 8px 0; transition: top 0.2s; }
     .skip-link:focus { top: 0; }
     body::before { content: ''; position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; opacity: 0.015; background-image: repeating-linear-gradient(45deg, transparent, transparent 3px, #000 3px, #000 4px); }
     .container { max-width: 1200px; margin: 0 auto; padding: 0 clamp(12px, 4vw, 20px); position: relative; z-index: 1; }
@@ -57,8 +52,9 @@
     .header.scrolled { box-shadow: 0 4px 30px rgba(0,0,0,0.35); background: rgba(26,26,26,0.98); backdrop-filter: blur(10px); }
     .header-top { display: flex; align-items: center; justify-content: space-between; padding: 10px 0; gap: 12px; flex-wrap: wrap; border-bottom: 1px solid rgba(255,255,255,0.07); }
     .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--white); flex-shrink: 0; }
-    .logo-icon { width: auto; max-width: clamp(100px, 20vw, 160px); height: 40px; border-radius: 8px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; padding: 4px 8px; background: linear-gradient(135deg, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0.02) 100%); border: 1px solid rgba(255,255,255,0.1); transition: var(--transition); position: relative; }
-    .logo-icon::before { content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.08), transparent); transition: left 0.5s ease; }
+    /* Исправленный логотип: пропорциональное заполнение контейнера */
+    .logo-icon { width: auto; max-width: clamp(110px, 22vw, 170px); height: 42px; border-radius: 8px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; padding: 5px 10px; background: linear-gradient(135deg, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0.02) 100%); border: 1px solid rgba(255,255,255,0.1); transition: var(--transition); position: relative; overflow: hidden; }
+    .logo-icon::before { content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent); transition: left 0.5s ease; }
     .logo:hover .logo-icon::before { left: 100%; }
     .logo-icon img { width: auto; height: 100%; max-width: 100%; object-fit: contain; display: block; }
     .logo-text h1 { font-family: 'Montserrat', sans-serif; font-size: clamp(1.1rem, 3vw, 1.5rem); font-weight: 800; letter-spacing: 0.3px; line-height: 1.1; color: var(--white); margin: 0; }
@@ -211,7 +207,7 @@
     @media (max-width: 992px) { .cta-wrapper { grid-template-columns: 1fr; gap: 30px; } .cta-info { text-align: center; } .cta-phone-big { justify-content: center; } .why-grid { grid-template-columns: repeat(2, 1fr); } .hero { margin-top: 85px; } }
     @media (max-width: 768px) {
       .header-top { padding: 8px 0; gap: 10px; }
-      .logo-icon { max-width: 120px; height: 36px; }
+      .logo-icon { max-width: 130px; height: 38px; padding: 4px 8px; }
       .logo-text span { font-size: 0.65rem; }
       .header-schedule { display: none; }
       .nav { display: none; }
@@ -229,8 +225,8 @@
     @media (max-width: 480px) {
       .container { padding: 0 10px; }
       .header-top { padding: 6px 0; }
-      .logo-icon { max-width: 95px; height: 32px; padding: 3px 5px; }
-      .logo-text h1 { font-size: 0.92rem; }
+      .logo-icon { max-width: 105px; height: 34px; padding: 3px 6px; }
+      .logo-text h1 { font-size: 0.95rem; }
       .logo-text span { font-size: 0.6rem; }
       .hero { margin-top: 78px; }
       .hero h2 { font-size: 1.45rem; }
@@ -259,7 +255,7 @@
     <div class="container">
       <div class="header-top">
         <a href="#" class="logo">
-          <div class="logo-icon"><img src="https://i.ibb.co/v63HktY4/content-Photoroom.png" alt="Логотип Ваша Крыша" width="160" height="40"></div>
+          <div class="logo-icon"><img src="https://i.ibb.co/v63HktY4/content-Photoroom.png" alt="Логотип Ваша Крыша"></div>
           <div class="logo-text"><h1>Ваша Крыша</h1><span>Монтаж и ремонт кровель в Калининграде</span></div>
         </a>
         <div class="header-phone">
@@ -303,18 +299,18 @@
       <div class="container">
         <div class="section-header fade-up"><h2>Все виды кровельных работ</h2><p>Полный спектр услуг по монтажу и устройству кровли</p></div>
         <div class="services-grid">
-          <div class="service-card"><img src="https://avatars.mds.yandex.net/i?id=7d606b7e620898b739de6e2b6cc17788499ada57-5219960-images-thumbs&n=13" alt="Новая кровля" class="service-image" loading="lazy" decoding="async" width="400" height="182"><div class="service-content"><h3>Устройство новой кровли</h3><p>Монтаж кровли на новых строениях</p></div></div>
-          <div class="service-card"><img src="https://art-gs.ru/uploads/vybor-materialov-i-tehnologij-montazha-krovli-doma.webp" alt="Скатная крыша" class="service-image" loading="lazy" decoding="async" width="400" height="182"><div class="service-content"><h3>Монтаж скатной крыши</h3><p>Любая конфигурация и уклон</p></div></div>
-          <div class="service-card"><img src="https://stroymax-msk.ru/wp-content/uploads/2023/10/dina007833_installation_of_a_membrane_roof_on_a_building_worker_3671c305-a745-4fa0-8229-87d719e4a5f7.png" alt="Плоская кровля" class="service-image" loading="lazy" decoding="async" width="400" height="182"><div class="service-content"><h3>Монтаж плоской кровли</h3><p>Наплавляемая и мембранная технология</p></div></div>
-          <div class="service-card"><img src="https://avatars.mds.yandex.net/i?id=a03f07806ebf5a385b93be59b0fa5473_l-5221549-images-thumbs&n=13" alt="Мансардная крыша" class="service-image" loading="lazy" decoding="async" width="400" height="182"><div class="service-content"><h3>Монтаж мансардной крыши</h3><p>Устройство этажей с утеплением</p></div></div>
-          <div class="service-card"><img src="https://hausgrad.ru/wp-content/uploads/2017/02/dereviannye-fermy-valmovoi-kryshi.png" alt="Типы крыш" class="service-image" loading="lazy" decoding="async" width="400" height="182"><div class="service-content"><h3>Односкатная / вальмовая</h3><p>Все типы по вашим проектам</p></div></div>
-          <div class="service-card"><img src="https://tnsystem.ru/wa-data/public/shop/products/24/54/5424/images/6943/6943.970.jpg" alt="Мягкая кровля" class="service-image" loading="lazy" decoding="async" width="400" height="182"><div class="service-content"><h3>Монтаж мягкой кровли</h3><p>Битумная черепица и гонт</p></div></div>
-          <div class="service-card"><img src="https://img5.lalafo.com/i/posters/original/be/c5/87/krovelnye-materialy-id-38801701-806367975.jpeg" alt="Металлочерепица" class="service-image" loading="lazy" decoding="async" width="400" height="182"><div class="service-content"><h3>Монтаж металлочерепицы</h3><p>Прочное долговечное покрытие</p></div></div>
-          <div class="service-card"><img src="https://profnastilmoskva.ru/image/catalog/proflist/n75-1o.jpg" alt="Профнастил" class="service-image" loading="lazy" decoding="async" width="400" height="182"><div class="service-content"><h3>Монтаж профнастила</h3><p>Экономичное практичное решение</p></div></div>
-          <div class="service-card"><img src="https://rontmetall.ru/wp-content/uploads/2025/10/4.589z.png" alt="Фальцевая кровля" class="service-image" loading="lazy" decoding="async" width="400" height="182"><div class="service-content"><h3>Фальцевая кровля</h3><p>Классика из листовой стали</p></div></div>
-          <div class="service-card"><img src="https://i.ytimg.com/vi/SyO4KuwhpP8/maxresdefault.jpg" alt="Шифер" class="service-image" loading="lazy" decoding="async" width="400" height="182"><div class="service-content"><h3>Монтаж шифера</h3><p>Традиционное надёжное покрытие</p></div></div>
-          <div class="service-card"><img src="https://onduline.life/storage/datatypes/articles/0000/00000119/articles-image-119.jpeg" alt="Ондулин" class="service-image" loading="lazy" decoding="async" width="400" height="182"><div class="service-content"><h3>Монтаж ондулина</h3><p>Лёгкий экологичный материал</p></div></div>
-          <div class="service-card"><img src="https://80.img.avito.st/image/1/1.9DUcBrasyrmoJU5epXfyXE9sW96q.HhRiVW9Fe9OqkedHLiXGWGsa5jv0rNMHYqnt0m656mU" alt="Натуральная черепица" class="service-image" loading="lazy" decoding="async" width="400" height="182"><div class="service-content"><h3>Натуральная черепица</h3><p>Премиум с длительным сроком службы</p></div></div>
+          <div class="service-card"><img src="https://avatars.mds.yandex.net/i?id=7d606b7e620898b739de6e2b6cc17788499ada57-5219960-images-thumbs&n=13" alt="Новая кровля" class="service-image" loading="lazy" decoding="async"><div class="service-content"><h3>Устройство новой кровли</h3><p>Монтаж кровли на новых строениях</p></div></div>
+          <div class="service-card"><img src="https://art-gs.ru/uploads/vybor-materialov-i-tehnologij-montazha-krovli-doma.webp" alt="Скатная крыша" class="service-image" loading="lazy" decoding="async"><div class="service-content"><h3>Монтаж скатной крыши</h3><p>Любая конфигурация и уклон</p></div></div>
+          <div class="service-card"><img src="https://stroymax-msk.ru/wp-content/uploads/2023/10/dina007833_installation_of_a_membrane_roof_on_a_building_worker_3671c305-a745-4fa0-8229-87d719e4a5f7.png" alt="Плоская кровля" class="service-image" loading="lazy" decoding="async"><div class="service-content"><h3>Монтаж плоской кровли</h3><p>Наплавляемая и мембранная технология</p></div></div>
+          <div class="service-card"><img src="https://avatars.mds.yandex.net/i?id=a03f07806ebf5a385b93be59b0fa5473_l-5221549-images-thumbs&n=13" alt="Мансардная крыша" class="service-image" loading="lazy" decoding="async"><div class="service-content"><h3>Монтаж мансардной крыши</h3><p>Устройство этажей с утеплением</p></div></div>
+          <div class="service-card"><img src="https://hausgrad.ru/wp-content/uploads/2017/02/dereviannye-fermy-valmovoi-kryshi.png" alt="Типы крыш" class="service-image" loading="lazy" decoding="async"><div class="service-content"><h3>Односкатная / вальмовая</h3><p>Все типы по вашим проектам</p></div></div>
+          <div class="service-card"><img src="https://tnsystem.ru/wa-data/public/shop/products/24/54/5424/images/6943/6943.970.jpg" alt="Мягкая кровля" class="service-image" loading="lazy" decoding="async"><div class="service-content"><h3>Монтаж мягкой кровли</h3><p>Битумная черепица и гонт</p></div></div>
+          <div class="service-card"><img src="https://img5.lalafo.com/i/posters/original/be/c5/87/krovelnye-materialy-id-38801701-806367975.jpeg" alt="Металлочерепица" class="service-image" loading="lazy" decoding="async"><div class="service-content"><h3>Монтаж металлочерепицы</h3><p>Прочное долговечное покрытие</p></div></div>
+          <div class="service-card"><img src="https://profnastilmoskva.ru/image/catalog/proflist/n75-1o.jpg" alt="Профнастил" class="service-image" loading="lazy" decoding="async"><div class="service-content"><h3>Монтаж профнастила</h3><p>Экономичное практичное решение</p></div></div>
+          <div class="service-card"><img src="https://rontmetall.ru/wp-content/uploads/2025/10/4.589z.png" alt="Фальцевая кровля" class="service-image" loading="lazy" decoding="async"><div class="service-content"><h3>Фальцевая кровля</h3><p>Классика из листовой стали</p></div></div>
+          <div class="service-card"><img src="https://i.ytimg.com/vi/SyO4KuwhpP8/maxresdefault.jpg" alt="Шифер" class="service-image" loading="lazy" decoding="async"><div class="service-content"><h3>Монтаж шифера</h3><p>Традиционное надёжное покрытие</p></div></div>
+          <div class="service-card"><img src="https://onduline.life/storage/datatypes/articles/0000/00000119/articles-image-119.jpeg" alt="Ондулин" class="service-image" loading="lazy" decoding="async"><div class="service-content"><h3>Монтаж ондулина</h3><p>Лёгкий экологичный материал</p></div></div>
+          <div class="service-card"><img src="https://80.img.avito.st/image/1/1.9DUcBrasyrmoJU5epXfyXE9sW96q.HhRiVW9Fe9OqkedHLiXGWGsa5jv0rNMHYqnt0m656mU" alt="Натуральная черепица" class="service-image" loading="lazy" decoding="async"><div class="service-content"><h3>Натуральная черепица</h3><p>Премиум с длительным сроком службы</p></div></div>
         </div>
         <div class="services-note"><i class="fas fa-info-circle" style="color: var(--orange-accent); margin-right: 6px;" aria-hidden="true"></i><strong>Точная цена — после замера.</strong> Выезд по области — <strong>бесплатно</strong>.</div>
       </div>
@@ -372,7 +368,7 @@
     <div class="container">
       <div class="footer-inner">
         <a href="#" class="footer-brand">
-          <div class="logo-icon"><img src="https://i.ibb.co/v63HktY4/content-Photoroom.png" alt="Логотип" width="52" height="52"></div>
+          <div class="logo-icon"><img src="https://i.ibb.co/v63HktY4/content-Photoroom.png" alt="Логотип"></div>
           <span>Ваша Крыша</span>
         </a>
         <nav class="footer-links" aria-label="Дополнительно">
@@ -396,16 +392,16 @@
   { "routes": [{ "pattern": "website.dev", "custom_domain": true }] } -->
   
   <script>
-    // ===== 100% FIX: страница всегда открывается в самом верху =====
+    // ===== FIX: страница всегда открывается в самом верху =====
     history.scrollRestoration = 'manual';
-    if (window.scrollY > 0) window.scrollTo(0, 0);
+    window.scrollTo(0, 0);
     window.addEventListener('load', () => window.scrollTo(0, 0), { once: true });
     document.addEventListener('DOMContentLoaded', () => {
       window.scrollTo(0, 0);
-      setTimeout(() => window.scrollTo(0, 0), 100);
+      setTimeout(() => window.scrollTo(0, 0), 150);
     });
 
-    // Smooth scroll only on click (не срабатывает при загрузке)
+    // Плавный скролл только по клику (не при загрузке)
     document.querySelectorAll('a[href^="#"]').forEach(link => {
       link.addEventListener('click', function(e) {
         const href = this.getAttribute('href');
@@ -413,14 +409,13 @@
         e.preventDefault();
         const target = document.querySelector(href);
         if (target) {
-          const offset = 85;
-          const top = target.getBoundingClientRect().top + window.pageYOffset;
-          window.scrollTo({ top: top - offset, behavior: 'smooth' });
+          const top = target.getBoundingClientRect().top + window.pageYOffset - 85;
+          window.scrollTo({ top, behavior: 'smooth' });
         }
       });
     });
 
-    // Burger
+    // Бургер-меню
     const burger = document.getElementById('burger'), mobileMenu = document.getElementById('mobileMenu');
     burger.addEventListener('click', () => {
       const open = mobileMenu.classList.toggle('open');
@@ -433,7 +428,7 @@
     }));
     document.addEventListener('keydown', e => { if(e.key === 'Escape' && mobileMenu.classList.contains('open')) { mobileMenu.classList.remove('open'); burger.classList.remove('active'); document.body.style.overflow = ''; burger.focus(); } });
 
-    // Header scroll
+    // Шапка при скролле
     window.addEventListener('scroll', () => document.getElementById('header').classList.toggle('scrolled', window.scrollY > 50), { passive: true });
 
     // FAQ
@@ -441,11 +436,11 @@
       btn.addEventListener('click', () => {
         const item = btn.parentElement, isActive = item.classList.contains('active');
         document.querySelectorAll('.faq-item').forEach(i => { i.classList.remove('active'); i.querySelector('.faq-question').setAttribute('aria-expanded', 'false'); });
-        if (!isActive) { item.classList.add('active'); btn.setAttribute('aria-expanded', 'true'); } else { btn.setAttribute('aria-expanded', 'false'); }
+        if (!isActive) { item.classList.add('active'); btn.setAttribute('aria-expanded', 'true'); }
       });
     });
 
-    // Form
+    // Форма
     const form = document.getElementById('callbackForm'), modal = document.getElementById('thankModal'), modalClose = document.getElementById('modalClose'), phoneInput = document.getElementById('phone');
     phoneInput.addEventListener('input', e => {
       let v = e.target.value.replace(/\D/g, '');
@@ -461,7 +456,7 @@
     const closeModal = () => { modal.classList.remove('open'); document.body.style.overflow = ''; };
     modalClose.addEventListener('click', closeModal); modal.addEventListener('click', e => { if(e.target===modal) closeModal(); }); document.addEventListener('keydown', e => { if(e.key==='Escape' && modal.classList.contains('open')) closeModal(); });
 
-    // Scroll animations
+    // Анимации при скролле
     const observer = new IntersectionObserver(entries => { entries.forEach(entry => { if(entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); } }); }, { threshold: 0.1, rootMargin: '0px 0px -20px 0px' });
     document.querySelectorAll('.fade-up, .service-card, .why-card, .faq-item, .services-note').forEach(el => observer.observe(el));
   </script>
