@@ -23,13 +23,18 @@
       --radius: 12px; --radius-lg: 20px;
       --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     }
-    html { font-size: 16px; scroll-padding-top: 85px; } /* scroll-behavior убран для фикса авто-скролла */
+    html { 
+      font-size: 16px; 
+      /* scroll-padding-top убран — он вызывает прыжок при загрузке */
+    }
     body {
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
       color: var(--text-dark); background: var(--light-gray); line-height: 1.6;
       overflow-x: hidden; min-height: 100dvh; -webkit-tap-highlight-color: transparent;
     }
-    .skip-link { position: absolute; top: -40px; left: 0; background: var(--orange-accent); color: white; padding: 8px 16px; z-index: 2000; text-decoration: none; font-weight: 600; border-radius: 0 0 8px 0; transition: top 0.2s; }
+    .skip-link { 
+      position: absolute; top: -40px; left: 0; background: var(--orange-accent); color: white; padding: 8px 16px; z-index: 2000; text-decoration: none; font-weight: 600; border-radius: 0 0 8px 0; transition: top 0.2s; 
+    }
     .skip-link:focus { top: 0; }
     body::before { content: ''; position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; opacity: 0.015; background-image: repeating-linear-gradient(45deg, transparent, transparent 3px, #000 3px, #000 4px); }
     .container { max-width: 1200px; margin: 0 auto; padding: 0 clamp(12px, 4vw, 20px); position: relative; z-index: 1; }
@@ -391,11 +396,16 @@
   { "routes": [{ "pattern": "website.dev", "custom_domain": true }] } -->
   
   <script>
-    // ===== FIX: Prevent auto-scroll on load =====
+    // ===== 100% FIX: страница всегда открывается в самом верху =====
     history.scrollRestoration = 'manual';
-    window.scrollTo(0, 0);
+    if (window.scrollY > 0) window.scrollTo(0, 0);
+    window.addEventListener('load', () => window.scrollTo(0, 0), { once: true });
+    document.addEventListener('DOMContentLoaded', () => {
+      window.scrollTo(0, 0);
+      setTimeout(() => window.scrollTo(0, 0), 100);
+    });
 
-    // Smooth scroll only on click (doesn't trigger on page load)
+    // Smooth scroll only on click (не срабатывает при загрузке)
     document.querySelectorAll('a[href^="#"]').forEach(link => {
       link.addEventListener('click', function(e) {
         const href = this.getAttribute('href');
@@ -403,9 +413,9 @@
         e.preventDefault();
         const target = document.querySelector(href);
         if (target) {
-          const headerOffset = 85;
-          const targetPos = target.getBoundingClientRect().top + window.pageYOffset;
-          window.scrollTo({ top: targetPos - headerOffset, behavior: 'smooth' });
+          const offset = 85;
+          const top = target.getBoundingClientRect().top + window.pageYOffset;
+          window.scrollTo({ top: top - offset, behavior: 'smooth' });
         }
       });
     });
