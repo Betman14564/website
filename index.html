@@ -52,7 +52,6 @@
     .header.scrolled { box-shadow: 0 4px 30px rgba(0,0,0,0.35); background: rgba(26,26,26,0.98); backdrop-filter: blur(10px); }
     .header-top { display: flex; align-items: center; justify-content: space-between; padding: 10px 0; gap: 12px; flex-wrap: wrap; border-bottom: 1px solid rgba(255,255,255,0.07); }
     .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--white); flex-shrink: 0; }
-    /* Исправленный логотип: пропорциональное заполнение контейнера */
     .logo-icon { width: auto; max-width: clamp(110px, 22vw, 170px); height: 42px; border-radius: 8px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; padding: 5px 10px; background: linear-gradient(135deg, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0.02) 100%); border: 1px solid rgba(255,255,255,0.1); transition: var(--transition); position: relative; overflow: hidden; }
     .logo-icon::before { content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent); transition: left 0.5s ease; }
     .logo:hover .logo-icon::before { left: 100%; }
@@ -113,7 +112,7 @@
     .service-card.visible { opacity: 1; transform: translateY(0); }
     .service-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--blue-primary), var(--orange-accent)); transform: scaleX(0); transform-origin: left; transition: transform 0.35s ease; z-index: 2; }
     @media (hover: hover) { .service-card:hover { transform: translateY(-3px) !important; box-shadow: var(--shadow-lg); border-color: rgba(29,78,216,0.1); } .service-card:hover::before { transform: scaleX(1); } }
-    .service-image { width: 100%; aspect-ratio: 2.2/1; object-fit: cover; display: block; }
+    .service-image { width: 100%; aspect-ratio: 2.2/1; object-fit: cover; display: block; background: #eee; }
     .service-content { padding: clamp(14px, 3vw, 20px); flex: 1; display: flex; flex-direction: column; }
     .service-content h3 { font-size: clamp(0.98rem, 2.5vw, 1.08rem); font-weight: 700; margin-bottom: 6px; color: var(--text-dark); line-height: 1.3; }
     @media (hover: hover) { .service-card:hover .service-content h3 { color: var(--blue-primary); } }
@@ -255,7 +254,7 @@
     <div class="container">
       <div class="header-top">
         <a href="#" class="logo">
-          <div class="logo-icon"><img src="https://i.ibb.co/v63HktY4/content-Photoroom.png" alt="Логотип Ваша Крыша"></div>
+          <div class="logo-icon"><img src="assets/logo.png" alt="Логотип Ваша Крыша"></div>
           <div class="logo-text"><h1>Ваша Крыша</h1><span>Монтаж и ремонт кровель в Калининграде</span></div>
         </a>
         <div class="header-phone">
@@ -299,18 +298,18 @@
       <div class="container">
         <div class="section-header fade-up"><h2>Все виды кровельных работ</h2><p>Полный спектр услуг по монтажу и устройству кровли</p></div>
         <div class="services-grid">
-          <div class="service-card"><img src="https://avatars.mds.yandex.net/i?id=7d606b7e620898b739de6e2b6cc17788499ada57-5219960-images-thumbs&n=13" alt="Новая кровля" class="service-image" loading="lazy" decoding="async"><div class="service-content"><h3>Устройство новой кровли</h3><p>Монтаж кровли на новых строениях</p></div></div>
-          <div class="service-card"><img src="https://art-gs.ru/uploads/vybor-materialov-i-tehnologij-montazha-krovli-doma.webp" alt="Скатная крыша" class="service-image" loading="lazy" decoding="async"><div class="service-content"><h3>Монтаж скатной крыши</h3><p>Любая конфигурация и уклон</p></div></div>
-          <div class="service-card"><img src="https://stroymax-msk.ru/wp-content/uploads/2023/10/dina007833_installation_of_a_membrane_roof_on_a_building_worker_3671c305-a745-4fa0-8229-87d719e4a5f7.png" alt="Плоская кровля" class="service-image" loading="lazy" decoding="async"><div class="service-content"><h3>Монтаж плоской кровли</h3><p>Наплавляемая и мембранная технология</p></div></div>
-          <div class="service-card"><img src="https://avatars.mds.yandex.net/i?id=a03f07806ebf5a385b93be59b0fa5473_l-5221549-images-thumbs&n=13" alt="Мансардная крыша" class="service-image" loading="lazy" decoding="async"><div class="service-content"><h3>Монтаж мансардной крыши</h3><p>Устройство этажей с утеплением</p></div></div>
-          <div class="service-card"><img src="https://hausgrad.ru/wp-content/uploads/2017/02/dereviannye-fermy-valmovoi-kryshi.png" alt="Типы крыш" class="service-image" loading="lazy" decoding="async"><div class="service-content"><h3>Односкатная / вальмовая</h3><p>Все типы по вашим проектам</p></div></div>
-          <div class="service-card"><img src="https://tnsystem.ru/wa-data/public/shop/products/24/54/5424/images/6943/6943.970.jpg" alt="Мягкая кровля" class="service-image" loading="lazy" decoding="async"><div class="service-content"><h3>Монтаж мягкой кровли</h3><p>Битумная черепица и гонт</p></div></div>
-          <div class="service-card"><img src="https://img5.lalafo.com/i/posters/original/be/c5/87/krovelnye-materialy-id-38801701-806367975.jpeg" alt="Металлочерепица" class="service-image" loading="lazy" decoding="async"><div class="service-content"><h3>Монтаж металлочерепицы</h3><p>Прочное долговечное покрытие</p></div></div>
-          <div class="service-card"><img src="https://profnastilmoskva.ru/image/catalog/proflist/n75-1o.jpg" alt="Профнастил" class="service-image" loading="lazy" decoding="async"><div class="service-content"><h3>Монтаж профнастила</h3><p>Экономичное практичное решение</p></div></div>
-          <div class="service-card"><img src="https://rontmetall.ru/wp-content/uploads/2025/10/4.589z.png" alt="Фальцевая кровля" class="service-image" loading="lazy" decoding="async"><div class="service-content"><h3>Фальцевая кровля</h3><p>Классика из листовой стали</p></div></div>
-          <div class="service-card"><img src="https://i.ytimg.com/vi/SyO4KuwhpP8/maxresdefault.jpg" alt="Шифер" class="service-image" loading="lazy" decoding="async"><div class="service-content"><h3>Монтаж шифера</h3><p>Традиционное надёжное покрытие</p></div></div>
-          <div class="service-card"><img src="https://onduline.life/storage/datatypes/articles/0000/00000119/articles-image-119.jpeg" alt="Ондулин" class="service-image" loading="lazy" decoding="async"><div class="service-content"><h3>Монтаж ондулина</h3><p>Лёгкий экологичный материал</p></div></div>
-          <div class="service-card"><img src="https://80.img.avito.st/image/1/1.9DUcBrasyrmoJU5epXfyXE9sW96q.HhRiVW9Fe9OqkedHLiXGWGsa5jv0rNMHYqnt0m656mU" alt="Натуральная черепица" class="service-image" loading="lazy" decoding="async"><div class="service-content"><h3>Натуральная черепица</h3><p>Премиум с длительным сроком службы</p></div></div>
+          <div class="service-card"><img src="assets/1.png" alt="Устройство новой кровли" class="service-image" loading="lazy" decoding="async"><div class="service-content"><h3>Устройство новой кровли</h3><p>Монтаж кровли на новых строениях</p></div></div>
+          <div class="service-card"><img src="assets/2.png" alt="Монтаж скатной крыши" class="service-image" loading="lazy" decoding="async"><div class="service-content"><h3>Монтаж скатной крыши</h3><p>Любая конфигурация и уклон</p></div></div>
+          <div class="service-card"><img src="assets/3.png" alt="Монтаж плоской кровли" class="service-image" loading="lazy" decoding="async"><div class="service-content"><h3>Монтаж плоской кровли</h3><p>Наплавляемая и мембранная технология</p></div></div>
+          <div class="service-card"><img src="assets/4.png" alt="Монтаж мансардной крыши" class="service-image" loading="lazy" decoding="async"><div class="service-content"><h3>Монтаж мансардной крыши</h3><p>Устройство этажей с утеплением</p></div></div>
+          <div class="service-card"><img src="assets/5.png" alt="Односкатная / двускатная / вальмовая" class="service-image" loading="lazy" decoding="async"><div class="service-content"><h3>Односкатная / вальмовая</h3><p>Все типы по вашим проектам</p></div></div>
+          <div class="service-card"><img src="assets/6.png" alt="Монтаж мягкой кровли" class="service-image" loading="lazy" decoding="async"><div class="service-content"><h3>Монтаж мягкой кровли</h3><p>Битумная черепица и гонт</p></div></div>
+          <div class="service-card"><img src="assets/7.png" alt="Монтаж металлочерепицы" class="service-image" loading="lazy" decoding="async"><div class="service-content"><h3>Монтаж металлочерепицы</h3><p>Прочное долговечное покрытие</p></div></div>
+          <div class="service-card"><img src="assets/8.png" alt="Монтаж профнастила" class="service-image" loading="lazy" decoding="async"><div class="service-content"><h3>Монтаж профнастила</h3><p>Экономичное практичное решение</p></div></div>
+          <div class="service-card"><img src="assets/9.png" alt="Фальцевая кровля" class="service-image" loading="lazy" decoding="async"><div class="service-content"><h3>Фальцевая кровля</h3><p>Классика из листовой стали</p></div></div>
+          <div class="service-card"><img src="assets/10.png" alt="Монтаж шифера" class="service-image" loading="lazy" decoding="async"><div class="service-content"><h3>Монтаж шифера</h3><p>Традиционное надёжное покрытие</p></div></div>
+          <div class="service-card"><img src="assets/11.png" alt="Монтаж ондулина" class="service-image" loading="lazy" decoding="async"><div class="service-content"><h3>Монтаж ондулина</h3><p>Лёгкий экологичный материал</p></div></div>
+          <div class="service-card"><img src="assets/12.png" alt="Натуральная черепица" class="service-image" loading="lazy" decoding="async"><div class="service-content"><h3>Натуральная черепица</h3><p>Премиум с длительным сроком службы</p></div></div>
         </div>
         <div class="services-note"><i class="fas fa-info-circle" style="color: var(--orange-accent); margin-right: 6px;" aria-hidden="true"></i><strong>Точная цена — после замера.</strong> Выезд по области — <strong>бесплатно</strong>.</div>
       </div>
@@ -368,7 +367,7 @@
     <div class="container">
       <div class="footer-inner">
         <a href="#" class="footer-brand">
-          <div class="logo-icon"><img src="https://i.ibb.co/v63HktY4/content-Photoroom.png" alt="Логотип"></div>
+          <div class="logo-icon"><img src="assets/logo.png" alt="Логотип"></div>
           <span>Ваша Крыша</span>
         </a>
         <nav class="footer-links" aria-label="Дополнительно">
