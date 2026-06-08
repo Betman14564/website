@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://vasha-krysha-kaliningrad.netlify.app/sitemap.xml
