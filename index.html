@@ -4,8 +4,29 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <meta name="theme-color" content="#1a1a1a">
-  <title>Ваша Крыша — Монтаж и ремонт кровель в Калининграде</title>
-  <meta name="description" content="Профессиональный монтаж кровли под ключ в Калининграде. Все виды кровельных работ. Гарантия до 5 лет. Бесплатный замер.">
+  
+  <!-- 🔑 SEO: Title с ключевыми словами (не влияет на дизайн) -->
+  <title>Монтаж кровли в Калининграде под ключ | Ремонт крыши | Ваша Крыша</title>
+  
+  <!-- 🔑 SEO: Description с ключами для сниппета (не влияет на дизайн) -->
+  <meta name="description" content="Монтаж и ремонт кровли в Калининграде и области. Металлочерепица, профнастил, мягкая кровля, фальцевая. Гарантия 5 лет. Бесплатный замер и смета. Звоните: +7 962 250 7097">
+  
+  <!-- 🔑 Ключевые слова (скрытый мета-тег, не влияет на дизайн) -->
+  <meta name="keywords" content="монтаж кровли Калининград, ремонт крыши, кровельные работы, металлочерепица, профнастил, мягкая кровля, фальцевая кровля, ондулин, шифер, бесплатная смета, кровельщики Калининград">
+  
+  <!-- 🔑 Микроразметка Schema.org (скрытый скрипт, не влияет на дизайн) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "RoofingContractor",
+    "name": "Ваша Крыша",
+    "telephone": "+79622507097",
+    "priceRange": "₽₽",
+    "address": { "@type": "PostalAddress", "addressRegion": "Калининградская область", "addressLocality": "Калининград" },
+    "areaServed": ["Калининград", "Зеленоградск", "Светлогорск", "Балтийск", "Гусев", "Калининградская область"],
+    "openingHoursSpecification": { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"], "opens": "09:00", "closes": "20:00" }
+  }
+  </script>
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,6 +34,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw==" crossorigin="anonymous" referrerpolicy="no-referrer">
   
   <style>
+    /* ✅ ВСЕ СТИЛИ ОСТАВЛЕНЫ БЕЗ ИЗМЕНЕНИЙ — оформление не пострадало */
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
     :root {
       --graphite: #2d2d2d; --dark: #1a1a1a; --dark-lighter: #3a3a3a; --slate: #4a4a4a;
@@ -253,12 +275,13 @@
     <div class="container">
       <div class="header-top">
         <a href="#" class="logo">
-          <div class="logo-icon"><img src="assets/logo.png" alt="Логотип Ваша Крыша"></div>
+          <!-- 🔑 SEO: alt с ключом (не влияет на дизайн) -->
+          <div class="logo-icon"><img src="assets/logo.png" alt="Логотип Ваша Крыша — монтаж кровли Калининград"></div>
           <div class="logo-text"><h1>Ваша Крыша</h1><span>Монтаж и ремонт кровель в Калининграде</span></div>
         </a>
         <div class="header-phone">
           <span class="header-schedule"><i class="far fa-clock" aria-hidden="true"></i> 9:00–20:00</span>
-          <a href="tel:+79111234567" aria-label="Позвонить"><i class="fas fa-phone" aria-hidden="true"></i> +7 962 250 7097</a>
+          <a href="tel:+79622507097" aria-label="Позвонить"><i class="fas fa-phone" aria-hidden="true"></i> +7 962 250 7097</a>
         </div>
         <button class="burger" id="burger" aria-label="Меню" aria-expanded="false" aria-controls="mobileMenu"><span></span><span></span><span></span></button>
       </div>
@@ -271,7 +294,7 @@
     <a href="#why" class="mobile-link">Почему мы</a>
     <a href="#faq" class="mobile-link">Вопросы</a>
     <a href="#contacts" class="mobile-link">Контакты</a>
-    <a href="tel:+79111234567" style="color: var(--orange-light); margin-top: 10px;" aria-label="Позвонить"><i class="fas fa-phone" aria-hidden="true"></i> +7 962 250 7097</a>
+    <a href="tel:+79622507097" style="color: var(--orange-light); margin-top: 10px;" aria-label="Позвонить"><i class="fas fa-phone" aria-hidden="true"></i> +7 962 250 7097</a>
   </div>
 
   <main id="main-content">
@@ -280,14 +303,19 @@
         <div class="hero-content">
           <div class="hero-badge"><i class="fas fa-shield-alt" aria-hidden="true"></i> Гарантия до 5 лет</div>
           <h2>Качественная кровля<br>для <em>климата Калининграда</em></h2>
-          <p class="hero-subtitle">Работаем с дождём и ветром. <strong>Бесплатный замер</strong> и расчёт.<br>Проверенные материалы, реальные объекты.</p>
+          <!-- 🔑 SEO: текст с ключами, но в тех же тегах и классах -->
+          <p class="hero-subtitle">
+            Работаем с дождём и ветром. <strong>Бесплатный замер</strong> и расчёт.<br>
+            <strong>Монтаж кровли в Калининграде</strong>: металлочерепица, профнастил, мягкая кровля.
+            Проверенные материалы, реальные объекты.
+          </p>
           <div class="hero-actions">
             <a href="#contacts" class="btn btn-primary"><i class="fas fa-calculator" aria-hidden="true"></i> Рассчитать стоимость</a>
             <a href="#services" class="btn btn-outline"><i class="fas fa-list" aria-hidden="true"></i> Наши услуги</a>
           </div>
           <div class="hero-phone">
             <i class="fas fa-phone-alt" style="color: var(--orange-light);" aria-hidden="true"></i>
-            <a href="tel:+7 962 250 7097" aria-label="Позвонить">+7 962 250 7097</a>
+            <a href="tel:+79622507097" aria-label="Позвонить">+7 962 250 7097</a>
           </div>
         </div>
       </div>
@@ -295,22 +323,28 @@
 
     <section class="services" id="services">
       <div class="container">
-        <div class="section-header fade-up"><h2>Все виды кровельных работ</h2><p>Полный спектр услуг по монтажу и устройству кровли</p></div>
-        <div class="services-grid">
-          <div class="service-card"><img src="assets/1.png" alt="Устройство новой кровли" class="service-image" loading="lazy" decoding="async"><div class="service-content"><h3>Устройство новой кровли</h3><p>Монтаж кровли на новых строениях</p></div></div>
-          <div class="service-card"><img src="assets/2.png" alt="Монтаж скатной крыши" class="service-image" loading="lazy" decoding="async"><div class="service-content"><h3>Монтаж скатной крыши</h3><p>Любая конфигурация и уклон</p></div></div>
-          <div class="service-card"><img src="assets/3.png" alt="Монтаж плоской кровли" class="service-image" loading="lazy" decoding="async"><div class="service-content"><h3>Монтаж плоской кровли</h3><p>Наплавляемая и мембранная технология</p></div></div>
-          <div class="service-card"><img src="assets/4.png" alt="Монтаж мансардной крыши" class="service-image" loading="lazy" decoding="async"><div class="service-content"><h3>Монтаж мансардной крыши</h3><p>Устройство этажей с утеплением</p></div></div>
-          <div class="service-card"><img src="assets/5.png" alt="Односкатная / двускатная / вальмовая" class="service-image" loading="lazy" decoding="async"><div class="service-content"><h3>Односкатная / вальмовая</h3><p>Все типы по вашим проектам</p></div></div>
-          <div class="service-card"><img src="assets/6.png" alt="Монтаж мягкой кровли" class="service-image" loading="lazy" decoding="async"><div class="service-content"><h3>Монтаж мягкой кровли</h3><p>Битумная черепица и гонт</p></div></div>
-          <div class="service-card"><img src="assets/7.png" alt="Монтаж металлочерепицы" class="service-image" loading="lazy" decoding="async"><div class="service-content"><h3>Монтаж металлочерепицы</h3><p>Прочное долговечное покрытие</p></div></div>
-          <div class="service-card"><img src="assets/8.png" alt="Монтаж профнастила" class="service-image" loading="lazy" decoding="async"><div class="service-content"><h3>Монтаж профнастила</h3><p>Экономичное практичное решение</p></div></div>
-          <div class="service-card"><img src="assets/9.png" alt="Фальцевая кровля" class="service-image" loading="lazy" decoding="async"><div class="service-content"><h3>Фальцевая кровля</h3><p>Классика из листовой стали</p></div></div>
-          <div class="service-card"><img src="assets/10.png" alt="Монтаж шифера" class="service-image" loading="lazy" decoding="async"><div class="service-content"><h3>Монтаж шифера</h3><p>Традиционное надёжное покрытие</p></div></div>
-          <div class="service-card"><img src="assets/11.png" alt="Монтаж ондулина" class="service-image" loading="lazy" decoding="async"><div class="service-content"><h3>Монтаж ондулина</h3><p>Лёгкий экологичный материал</p></div></div>
-          <div class="service-card"><img src="assets/12.png" alt="Натуральная черепица" class="service-image" loading="lazy" decoding="async"><div class="service-content"><h3>Натуральная черепица</h3><p>Премиум с длительным сроком службы</p></div></div>
+        <div class="section-header fade-up">
+          <!-- 🔑 SEO: h2 с ключом, но тот же стиль -->
+          <h2>Все виды кровельных работ в Калининграде</h2>
+          <p>Полный спектр услуг по монтажу и устройству кровли под ключ</p>
         </div>
-        <div class="services-note"><i class="fas fa-info-circle" style="color: var(--orange-accent); margin-right: 6px;" aria-hidden="true"></i><strong>Точная цена — после замера.</strong> Выезд по области — <strong>бесплатно</strong>.</div>
+        <div class="services-grid">
+          <!-- 🔑 SEO: alt с ключами + точные размеры (не влияет на дизайн) -->
+          <div class="service-card"><img src="assets/1.png" alt="Устройство новой кровли в Калининграде" class="service-image" loading="lazy" decoding="async" width="400" height="182"><div class="service-content"><h3>Устройство новой кровли</h3><p>Монтаж кровли на новых строениях</p></div></div>
+          <div class="service-card"><img src="assets/2.png" alt="Монтаж скатной крыши в Калининграде" class="service-image" loading="lazy" decoding="async" width="400" height="182"><div class="service-content"><h3>Монтаж скатной крыши</h3><p>Любая конфигурация и уклон</p></div></div>
+          <div class="service-card"><img src="assets/3.png" alt="Монтаж плоской кровли в Калининграде" class="service-image" loading="lazy" decoding="async" width="400" height="182"><div class="service-content"><h3>Монтаж плоской кровли</h3><p>Наплавляемая и мембранная технология</p></div></div>
+          <div class="service-card"><img src="assets/4.png" alt="Монтаж мансардной крыши в Калининграде" class="service-image" loading="lazy" decoding="async" width="400" height="182"><div class="service-content"><h3>Монтаж мансардной крыши</h3><p>Устройство этажей с утеплением</p></div></div>
+          <div class="service-card"><img src="assets/5.png" alt="Односкатная / вальмовая крыша Калининград" class="service-image" loading="lazy" decoding="async" width="400" height="182"><div class="service-content"><h3>Односкатная / вальмовая</h3><p>Все типы по вашим проектам</p></div></div>
+          <div class="service-card"><img src="assets/6.png" alt="Монтаж мягкой кровли в Калининграде" class="service-image" loading="lazy" decoding="async" width="400" height="182"><div class="service-content"><h3>Монтаж мягкой кровли</h3><p>Битумная черепица и гонт</p></div></div>
+          <div class="service-card"><img src="assets/7.png" alt="Монтаж металлочерепицы в Калининграде" class="service-image" loading="lazy" decoding="async" width="400" height="182"><div class="service-content"><h3>Монтаж металлочерепицы</h3><p>Прочное долговечное покрытие</p></div></div>
+          <div class="service-card"><img src="assets/8.png" alt="Монтаж профнастила в Калининграде" class="service-image" loading="lazy" decoding="async" width="400" height="182"><div class="service-content"><h3>Монтаж профнастила</h3><p>Экономичное практичное решение</p></div></div>
+          <div class="service-card"><img src="assets/9.png" alt="Фальцевая кровля в Калининграде" class="service-image" loading="lazy" decoding="async" width="400" height="182"><div class="service-content"><h3>Фальцевая кровля</h3><p>Классика из листовой стали</p></div></div>
+          <div class="service-card"><img src="assets/10.png" alt="Монтаж шифера в Калининграде" class="service-image" loading="lazy" decoding="async" width="400" height="182"><div class="service-content"><h3>Монтаж шифера</h3><p>Традиционное надёжное покрытие</p></div></div>
+          <div class="service-card"><img src="assets/11.png" alt="Монтаж ондулина в Калининграде" class="service-image" loading="lazy" decoding="async" width="400" height="182"><div class="service-content"><h3>Монтаж ондулина</h3><p>Лёгкий экологичный материал</p></div></div>
+          <div class="service-card"><img src="assets/12.png" alt="Натуральная черепица в Калининграде" class="service-image" loading="lazy" decoding="async" width="400" height="182"><div class="service-content"><h3>Натуральная черепица</h3><p>Премиум с длительным сроком службы</p></div></div>
+        </div>
+        <!-- 🔑 SEO: текст с локальными ключами -->
+        <div class="services-note"><i class="fas fa-info-circle" style="color: var(--orange-accent); margin-right: 6px;" aria-hidden="true"></i><strong>Точная цена — после замера.</strong> Выезд по Калининграду, Зеленоградску, Светлогорску — <strong>бесплатно</strong>.</div>
       </div>
     </section>
 
@@ -320,7 +354,7 @@
         <div class="why-grid">
           <div class="why-card"><div class="why-icon animate-float"><i class="fas fa-cloud-rain" aria-hidden="true"></i></div><h3>Знаем местный климат</h3><p>Подбираем материалы и технологии под сырой, ветреный климат Калининграда.</p></div>
           <div class="why-card"><div class="why-icon animate-float slow"><i class="fas fa-file-invoice-dollar" aria-hidden="true"></i></div><h3>Работаем с НДС и без</h3><p>Удобные условия для юрлиц и частных заказчиков. Договор и документы.</p></div>
-          <div class="why-card"><div class="why-icon animate-float fast"><i class="fas fa-camera" aria-hidden="true"></i></div><h3>Реальные объекты</h3><p>Фото и видео наших работ. Приедем и покажем готовый результат.</p></div>
+          <div class="why-card"><div class="why-icon animate-float fast"><i class="fas fa-camera" aria-hidden="true"></i></div><h3>Реальные объекты</h3><p>Фото и видео наших работ в Калининграде, Зеленоградске, Светлогорске. Приедем и покажем готовый результат.</p></div>
         </div>
       </div>
     </section>
@@ -343,7 +377,7 @@
           <div class="cta-info fade-up">
             <h2>Нужна консультация<br>или бесплатный замер?</h2>
             <p>Позвоните или оставьте заявку — ответим, рассчитаем стоимость и подберём решение.</p>
-            <div class="cta-phone-big"><i class="fas fa-phone-alt animate-glow" aria-hidden="true"></i><a href="tel:+79111234567" aria-label="Позвонить">+7 962 250 7097</a></div>
+            <div class="cta-phone-big"><i class="fas fa-phone-alt animate-glow" aria-hidden="true"></i><a href="tel:+79622507097" aria-label="Позвонить">+7 962 250 7097</a></div>
             <p class="cta-schedule"><i class="far fa-clock" aria-hidden="true"></i> Ежедневно 9:00–20:00</p>
             <p class="cta-schedule"><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Калининград и область</p>
           </div>
@@ -352,7 +386,7 @@
             <form id="callbackForm" novalidate>
               <div class="form-group"><label for="name">Ваше имя</label><input type="text" id="name" name="name" placeholder="Алексей" required autocomplete="name"></div>
               <div class="form-group"><label for="phone">Телефон</label><input type="tel" id="phone" name="phone" placeholder="+7(***)***-**-**" required autocomplete="tel"></div>
-              <div class="form-group"><label for="comment">Комментарий <span style="font-weight:400; color:#aaa;">(необязательно)</span></label><textarea id="comment" name="comment" placeholder="Адрес объекта или задача"></textarea></div>
+              <div class="form-group"><label for="comment">Комментарий <span style="font-weight:400; color:#aaa;">(необязательно)</span></label><textarea id="comment" name="comment" placeholder="Адрес объекта в Калининграде или задача по кровле"></textarea></div>
               <button type="submit" class="form-submit"><i class="fas fa-paper-plane" aria-hidden="true"></i> Отправить заявку</button>
               <p class="form-privacy">Согласие на обработку персональных данных</p>
             </form>
@@ -366,7 +400,7 @@
     <div class="container">
       <div class="footer-inner">
         <a href="#" class="footer-brand">
-          <div class="logo-icon"><img src="assets/logo.png" alt="Логотип"></div>
+          <div class="logo-icon"><img src="assets/logo.png" alt="Логотип Ваша Крыша"></div>
           <span>Ваша Крыша</span>
         </a>
         <nav class="footer-links" aria-label="Дополнительно">
@@ -374,10 +408,11 @@
           <a href="#why">Почему мы</a>
           <a href="#faq">Вопросы</a>
           <a href="#contacts">Контакты</a>
-          <a href="tel:+79111234567" aria-label="Позвонить">+7 962 250 7097</a>
+          <a href="tel:+79622507097" aria-label="Позвонить">+7 962 250 7097</a>
         </nav>
         <div class="footer-divider"></div>
-        <p>© 2024–2026 Ваша Крыша. Калининград.</p>
+        <!-- 🔑 SEO: копирайт с ключами (не влияет на дизайн) -->
+        <p>© 2024–2026 Ваша Крыша. Монтаж и ремонт кровли в Калининграде, Зеленоградске, Светлогорске, Балтийске.</p>
       </div>
     </div>
   </footer>
@@ -386,8 +421,7 @@
     <div class="modal-box"><div class="modal-icon"><i class="fas fa-check" aria-hidden="true"></i></div><h3 id="modalTitle">Заявка отправлена!</h3><p>Перезвоним в течение 15 минут. Если срочно — звоните нам напрямую.</p><button class="modal-close" id="modalClose">Понятно</button></div>
   </div>
 
-  <!-- DEPLOY CONFIG
-  { "routes": [{ "pattern": "website.dev", "custom_domain": true }] } -->
+  <!-- DEPLOY CONFIG { "routes": [{ "pattern": "website.dev", "custom_domain": true }] } -->
   
   <script>
     // ===== FIX: страница всегда открывается в самом верху =====
@@ -399,7 +433,7 @@
       setTimeout(() => window.scrollTo(0, 0), 150);
     });
 
-    // Плавный скролл только по клику (не при загрузке)
+    // Плавный скролл только по клику
     document.querySelectorAll('a[href^="#"]').forEach(link => {
       link.addEventListener('click', function(e) {
         const href = this.getAttribute('href');
@@ -448,7 +482,7 @@
     form.addEventListener('submit', e => {
       e.preventDefault();
       if(!document.getElementById('name').value.trim() || !phoneInput.value.trim()) return alert('Заполните имя и телефон');
-      if(!/^\+7\d{10}$/.test(phoneInput.value)) return alert('Формат: +7XXXXXXXXXX');
+      if(!/^\+7\d{10}$/.test(phoneInput.value)) return alert('Формат: +79622507097');
       modal.classList.add('open'); document.body.style.overflow = 'hidden'; form.reset(); setTimeout(()=>modalClose.focus(), 50);
     });
     const closeModal = () => { modal.classList.remove('open'); document.body.style.overflow = ''; };
